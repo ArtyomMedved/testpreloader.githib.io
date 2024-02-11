@@ -5,86 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preloader</title>
-
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div id="preloader" class="preloader">
+    <div id="preloader" class="visible">
         <div class="preloader__loader">
             <div class="loadingio-spinner-rolling-wopxwk46ahe">
                 <div class="ldio-zgxx64th47">
                     <div></div>
                 </div>
             </div>
-
-            <span class="preloader__percents">
-                <span id="percents">0</span>%
-            </span>
         </div>
         <!-- /.preloader__loader -->
     </div>
     <!-- /#preloader.preloader -->
-
-
     <main>
-	<div class="container">
-		<div class="inner">
-			<div class="item">
-                <input id="number-diet" class="js-number" type="number" name="number" value="0" readonly>
-				<br>
-				<button class="btn" id="btn1" onclick="incrementClicks()"></button>
-			</div>
-			<div class="barmenu">
-				<button class="btn-menu">
-					<a href="friends.html">Друзья</a>
-				</button>
-				<button class="btn-menu">
-					<a href="top.html">Рейтинг</a>
-				</button>
-				<button class="btn-menu">Задания</button>
-				<button class="btn-menu">Бусты</button>
-			</div>
-		</div>
-	</div>
-	</div>
-    <script>
-		function countFunc(count) {
-			var btnPlus = count.querySelector('.btn');
-			var field = count.querySelector('.js-number');
-			var fieldValue = parseFloat(field.value, 10);
-		
-			btnPlus.addEventListener('click', function() {
-				fieldValue++;
-				field.value = fieldValue;
-				if (typeof(Storage) !== "undefined") {
-					if (localStorage.numClicks) {
-						localStorage.numClicks = Number(localStorage.numClicks) + 1;
-					} else {
-						localStorage.numClicks = 1;
-					}
-					field.value = localStorage.numClicks;
-				} else {
-					field.value = "Unfortunately, your browser does not support web storage...";
-				}
-			});
-			
-			if (typeof(Storage) !== "undefined") {
-				if (localStorage.numClicks) {
-					field.value = localStorage.numClicks;
-				} else {
-					localStorage.numClicks = 0;
-					field.value = localStorage.numClicks;
-				}
-			} else {
-				field.value = "Unfortunately, your browser does not support web storage...";
-			}
-		}
-		
-		var counts = document.querySelectorAll('.item');
-		counts.forEach(countFunc);
-		</script>
-			
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
-	<script src="app.js"></script>
+        <div class="container">
+            <div class="inner">
+                <div class="item">
+                    <input id="number-diet" class="js-number" type="number" name="number" value="0" readonly>
+                    <br>
+                    <button class="btn" id="btn1" onclick="incrementClicks()"></button>
+                </div>
+                <div class="barmenu">
+                    <button class="btn-menu">
+                        <a href="friends.html">Друзья</a>
+                    </button>
+                    <button class="btn-menu">
+                        <a href="top.html">Рейтинг</a>
+                    </button>
+                    <button class="btn-menu">Задания</button>
+                    <button class="btn-menu">Бусты</button>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script>
+            function countFunc(count) {
+                var btnPlus = count.querySelector('.btn');
+                var field = count.querySelector('.js-number');
+                var fieldValue = parseFloat(field.value, 10);
+            
+                btnPlus.addEventListener('click', function() {
+                    fieldValue++;
+                    field.value = fieldValue;
+                    if (typeof(Storage) !== "undefined") {
+                        if (localStorage.numClicks) {
+                            localStorage.numClicks = Number(localStorage.numClicks) + 1;
+                        } else {
+                            localStorage.numClicks = 1;
+                        }
+                        field.value = localStorage.numClicks;
+                    } else {
+                        field.value = "Unfortunately, your browser does not support web storage...";
+                    }
+                });
+                
+                if (typeof(Storage) !== "undefined") {
+                    if (localStorage.numClicks) {
+                        field.value = localStorage.numClicks;
+                    } else {
+                        localStorage.numClicks = 0;
+                        field.value = localStorage.numClicks;
+                    }
+                } else {
+                    field.value = "Unfortunately, your browser does not support web storage...";
+                }
+            }
+            
+            var counts = document.querySelectorAll('.item');
+            counts.forEach(countFunc);
+            </script>
+                
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
     </main>
+
+
+    <script src="main.js"></script>
+</body>
+</html>

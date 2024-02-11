@@ -12,77 +12,115 @@ img {
     width: 100%;
 }
 
-.preloader {
-    position: absolute;
+#preloader {
+    position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 1000;
-    transition: all .09s ease-out;
+    z-index: 999;
+    width: 420px;
+    height: 750px;
+    overflow: visible;
+    background: #fbfbfb url('//cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/processing.gif') no-repeat center center;
+}
+  
+.visible {
+visibility: visible;
+opacity: 1;
+transition: opacity 2s linear;
 }
 
-.preloader--hide {
-    opacity: 0;
-    visibility: hidden;
-    z-index: -1;
+.hidden {
+visibility: hidden;
+opacity: 0;
+transition: visibility 0s 2s, opacity 2s linear;
 }
 
-.preloader__loader, .preloader__percents {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	touch-action: manipulation;
+	width: 420px;
+	height: 740px;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
-.preloader__percents {
-    font-family: Arial, sans-serif;
-    font-size: 24px;
-    font-weight: bold;
+
+.item {
+	text-align: center;
+	width: 418px;
+	height: 700px;
+	background: rgb(239 239 239);
 }
 
-
-
-
-
-@keyframes ldio-zgxx64th47 {
-    0% { transform: translate(-50%,-50%) rotate(0deg); }
-    100% { transform: translate(-50%,-50%) rotate(360deg); }
+.btn {
+	display: inline-block;
+	border: none;
+    background-image: url(./photo/btn1.png);
+    width: 300px;
+    height: 300px;
+    border-radius: 100px;
+	margin-top: 100px;
 }
 
-.ldio-zgxx64th47 div {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border: 10px solid #695be1;
-    border-top-color: transparent;
-    border-radius: 50%;
+input {
+    text-align: center;
+    font-size: 16px;
+	margin-top: 100px;
 }
 
-.ldio-zgxx64th47 div {
-    animation: ldio-zgxx64th47 1s linear infinite;
-    top: 100px;
-    left: 100px
+.usercard {
+	text-align: center;
 }
 
-.loadingio-spinner-rolling-wopxwk46ahe {
-    width: 200px;
-    height: 200px;
-    display: inline-block;
-    overflow: hidden;
-    background: rgba(241, 242, 243, 0);
+.barmenu {
+	position: fixed;
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    height: 45px;
+	width: 416px;
+    background: rgb(239 239 239);
 }
 
-.ldio-zgxx64th47 {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform: translateZ(0) scale(1);
-    backface-visibility: hidden;
-    transform-origin: 0 0;
+.btn-menu {
+	font-size: 16px;
+	margin: 5px;
 }
 
-.ldio-zgxx64th47 div {
-    box-sizing: content-box;
+.chill {
+	margin-top: 30px;
+	height: 100px;
+}
+
+.block {
+	display: flex;
+    flex-wrap: wrap;
+	border:1px solid black;
+	border-radius: 10px;
+	margin-top: 10px;
+}
+
+.icon {
+	margin: 5px;
+	height: 30px;
+	border: none;
+	border-radius: 100px;
+}
+
+.nicname {
+	margin: 9px;
+}
+
+.btn-friend {
+	background-image: url(./photo/add_friend.jpg);
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+}
+
+.friend {
+	margin-top: 10px;
+	margin-left: 10px;
 }
